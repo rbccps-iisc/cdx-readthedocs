@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Welcome to CDX &mdash; CDX 1.0.0 documentation</title>
+  <title>Getting Started &mdash; CDX 1.0.0 documentation</title>
   
 
   
@@ -28,7 +28,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Getting Started" href="gettingStarted.html" /> 
+    <link rel="next" title="Install" href="install.html" />
+    <link rel="prev" title="Welcome to CDX" href="index.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -47,7 +48,7 @@
           
 
           
-            <a href="#" class="icon icon-home"> CDX
+            <a href="index.html" class="icon icon-home"> CDX
           
 
           
@@ -77,8 +78,12 @@
               
             
             
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="gettingStarted.html">Getting Started</a></li>
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#registering-your-first-device">Registering your first device</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apis.html">API Documentation</a></li>
@@ -97,7 +102,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">CDX</a>
+          <a href="index.html">CDX</a>
         
       </nav>
 
@@ -126,15 +131,15 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="#">Docs</a> &raquo;</li>
+      <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Welcome to CDX</li>
+      <li>Getting Started</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/gettingStarted.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -147,41 +152,43 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="welcome-to-cdx">
-<h1>Welcome to CDX<a class="headerlink" href="#welcome-to-cdx" title="Permalink to this headline">¶</a></h1>
-<p>City Data Exchange (CDX) is a high performance, scalable and secure open source IOT platform deployed in docker.
-It is a comprehensive software solution stack comprising various microservices for enabling seamless data exchange
-between data producers and consumers.</p>
-<div class="section" id="features">
-<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<p>This guide will help you to quickly get started with a single node instance of CDX and start publishing data from a device.</p>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Supports multiple protocols: HTTP, AMQP and MQTT.</li>
-<li>Has a solid access control framework for data exchange.</li>
-<li>Supports time based data lease options.</li>
+<li>Clone the project using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/rbccps-iisc/ideam</span> <span class="pre">&amp;&amp;</span> <span class="pre">cd</span> <span class="pre">ideam</span></code></li>
+<li>Run <code class="docutils literal notranslate"><span class="pre">./install</span></code></li>
 </ul>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="registering-your-first-device">
+<h2>Registering your first device<a class="headerlink" href="#registering-your-first-device" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="gettingStarted.html">Getting Started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="gettingStarted.html#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gettingStarted.html#registering-your-first-device">Registering your first device</a></li>
-</ul>
+<li><dl class="first docutils">
+<dt>Once CDX has installed you can now start registering devices with it. Let’s create a simple test device for the sake of illustration.</dt>
+<dd><p class="first last"><code class="docutils literal notranslate"><span class="pre">sh</span> <span class="pre">tests/create_entity.sh</span> <span class="pre">testStreetlight</span></code></p>
+</dd>
+</dl>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apis.html">API Documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="details.html">Other Details</a></li>
+<li><dl class="first docutils">
+<dt>This will give you the details of the registration</dt>
+<dd><div class="first last highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;Registration&quot;</span><span class="p">:</span> <span class="s2">&quot;success&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;entityID&quot;</span><span class="p">:</span> <span class="s2">&quot;teststreetlight&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;apiKey&quot;</span><span class="p">:</span> <span class="s2">&quot;EHQilai5cF_tNmWOwg-oiPdncmRPdfGCIhFHM85zDDW&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;subscriptionEndPoint&quot;</span><span class="p">:</span> <span class="s2">&quot;https://smartcity.rbccps.org/api/{version}/followid=teststreetlight&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;accessEndPoint&quot;</span><span class="p">:</span> <span class="s2">&quot;https://smartcity.rbccps.org/api/{version}/db?id=teststreetlight&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;publicationEndPoint&quot;</span><span class="p">:</span> <span class="s2">&quot;https://smartcity.rbccps.org/api/{version}/publish?id=teststreetlight&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;resourceAPIInfo&quot;</span><span class="p">:</span> <span class="s2">&quot;https://rbccps-iisc.github.io&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
 </ul>
 </div>
-</div>
-</div>
-<div class="section" id="indices-and-tables">
-<h1>Indices and Tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
-<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
-<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
-</ul>
 </div>
 
 
@@ -192,8 +199,10 @@ between data producers and consumers.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="gettingStarted.html" class="btn btn-neutral float-right" title="Getting Started" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="install.html" class="btn btn-neutral float-right" title="Install" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
+      
+        <a href="index.html" class="btn btn-neutral" title="Welcome to CDX" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
