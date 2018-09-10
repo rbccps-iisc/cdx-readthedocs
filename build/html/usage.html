@@ -28,8 +28,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="API Documentation" href="apis.html" />
-    <link rel="prev" title="Install" href="install.html" /> 
+    <link rel="next" title="Other Details" href="details.html" />
+    <link rel="prev" title="Unbind API" href="unbind.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -79,9 +79,10 @@
             
             
               <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="gettingStarted.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apis.html">API Documentation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="details.html">Other Details</a></li>
 </ul>
 
@@ -149,7 +150,38 @@
             
   <div class="section" id="usage">
 <h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h1>
-<p>This is how to use CDX</p>
+<p>The following workflow will attempt to illustrate the typical usage of the smart city stack.</p>
+<ol class="arabic">
+<li><p class="first">Consider that two devices have registered with the middleware viz. “streetlight” and “app”
+The API keys obtained are as follows:</p>
+<p>For the streetlight</p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;Registration&quot;</span><span class="p">:</span> <span class="s2">&quot;success&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;entityID&quot;</span><span class="p">:</span> <span class="s2">&quot;streetlight&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;apiKey&quot;</span><span class="p">:</span> <span class="s2">&quot;ReiHIzTA6hQRbv3JO2gRHP9iEh4NzK-bBSl-J0GKJZo&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;subscriptionEndPoint&quot;</span><span class="p">:</span> <span class="s2">&quot;https://smartcity.rbccps.org/api/{version}/follow?id=streetlight&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;accessEndPoint&quot;</span><span class="p">:</span> <span class="s2">&quot;https://smartcity.rbccps.org/api/{version}/db?id=streetlight&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;publicationEndPoint&quot;</span><span class="p">:</span> <span class="s2">&quot;https://smartcity.rbccps.org/api/{version}/publish?id=streetlight&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;resourceAPIInfo&quot;</span><span class="p">:</span> <span class="s2">&quot;https://rbccps-iisc.github.io&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>For the app</p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;Registration&quot;</span><span class="p">:</span> <span class="s2">&quot;success&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;entityID&quot;</span><span class="p">:</span> <span class="s2">&quot;app&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;apiKey&quot;</span><span class="p">:</span> <span class="s2">&quot;7KfqcDOPvz3JECUwwGsQYuTdKtyGTQTpLDaZjIbJpMt&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;subscriptionEndPoint&quot;</span><span class="p">:</span> <span class="s2">&quot;https://smartcity.rbccps.org/api/{version}/follow?id=app&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;accessEndPoint&quot;</span><span class="p">:</span> <span class="s2">&quot;https://smartcity.rbccps.org/api/{version}/db?id=app&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;publicationEndPoint&quot;</span><span class="p">:</span> <span class="s2">&quot;https://smartcity.rbccps.org/api/{version}/publish?id=app&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;resourceAPIInfo&quot;</span><span class="p">:</span> <span class="s2">&quot;https://rbccps-iisc.github.io&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Now consider that the device <code class="docutils literal notranslate"><span class="pre">app</span></code> is interested in <code class="docutils literal notranslate"><span class="pre">streetlight</span></code> s data.</p>
+</li>
+</ol>
 </div>
 
 
@@ -160,10 +192,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="apis.html" class="btn btn-neutral float-right" title="API Documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="details.html" class="btn btn-neutral float-right" title="Other Details" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="install.html" class="btn btn-neutral" title="Install" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="unbind.html" class="btn btn-neutral" title="Unbind API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

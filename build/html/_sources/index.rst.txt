@@ -5,6 +5,13 @@ City Data Exchange (CDX) is a high performance, scalable and secure open source 
 It is a comprehensive software solution stack comprising various microservices for enabling seamless data exchange
 between data producers and consumers.
 
+
+.. image:: arch.png
+    :width: 800px
+    :align: center
+    :height: 500px
+    :alt: alternate text
+
 Features
 --------
 
@@ -13,14 +20,14 @@ Features
 * Supports time based data lease options.
 
 Contents:
-
+=========
 .. toctree::
    :maxdepth: 2
 
    gettingStarted
    install
-   usage
    apis
+   usage
    details
 
 Indices and Tables
