@@ -28,11 +28,4 @@ Contents:
    install
    apis
    usage
-   details
 
-Indices and Tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

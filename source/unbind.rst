@@ -1,9 +1,6 @@
 Unbind API
 ==========
 
-API Specifications
-------------------
-
 * **Summary**: The unbind API is used to enable unbinding queues and exchanges. Unbinding can be done when the default bindings between the exchanges 
   and queues does not suit the user. It can also be done when the device temporarily does not need to receive data from another device but wishes to 
   keep the share entry intact.

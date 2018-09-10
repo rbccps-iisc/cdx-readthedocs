@@ -1,9 +1,6 @@
 Publish
 =======
 
-API Specifications
-------------------
-
 * **Summary**: The publish API is used to publish data from devices to the middleware. To access this API, the device API key obtained after device registration must be used.
   Published messages go into the specified exchange of the device. There are 6 exchanges and 4 queues assigned to a device. They are as follows:
 

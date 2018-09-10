@@ -3,8 +3,8 @@
 Register 
 ========
 
-API Specifications
-------------------
+API Specification
+-----------------
 
 * **Summary**: The register API is used to register devices and apps with the middleware. They can register as either
   devices or subscribers, the difference being that subscribers do not publish any data. Every device can have its own

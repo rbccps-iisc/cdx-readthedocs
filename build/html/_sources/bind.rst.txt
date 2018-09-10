@@ -1,9 +1,6 @@
 Bind 
 =====
 
-API Specifications
-------------------
-
 * **Summary**: The bind API is used to enable binding between queues and exchanges. A device owner has complete control over binding and unbinding exchanges and queues
   that belong to them. However, if they wish to bind to a different owner's device, they would need to go through the formal process of ``follow`` and ``share``. On the
   other hand, all devices are free to bind to the public exchange of any other device. 

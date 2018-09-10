@@ -1,9 +1,6 @@
 Unshare
 =======
 
-API Specifications
-------------------
-
 * **Summary**: The unshare API is used to revoke the permissions given to a device. This deletes the ``share`` entry from LDAP and unbinds the queue if bound.
   This API can be used by the owner's device when the data lease time of the requesting device has expired, or the owner for some reason deems that the requestor
   is no longer eligible for their data.

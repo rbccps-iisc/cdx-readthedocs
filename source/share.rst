@@ -1,9 +1,6 @@
 Share
 =====
 
-API Specifications
-------------------
-
 * **Summary**: The "share" API is a data exchange enabling API which is used to approve "follow" requests. When the share API is called by an entity, it grants the necessary 
   permissions to the requestor's device, i.e, either read access, or write access, or both. Once the process completes, the requesting entity gets a notification in their
   <device>.notify queue aprising them of the status of the follow request they made. Consequently, the requesting entity can either bind their queue to the requested exchange,

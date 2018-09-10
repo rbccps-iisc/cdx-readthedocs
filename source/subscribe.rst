@@ -1,9 +1,6 @@
 Subscribe
 =========
 
-API Specifications
-------------------
-
 * **Summary**: The subscribe API is used to get messages from a queue. This is a destructive action on the message as 
   it will no longer be available in the queue after subscription. This API is not streaming, i.e. as data arrives into the 
   queue it is not pushed to the subscribers. However, it needs to be polled regularly to check for new messages.

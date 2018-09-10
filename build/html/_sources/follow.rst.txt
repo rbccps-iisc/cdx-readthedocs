@@ -1,9 +1,6 @@
 Follow
 ======
 
-API Specifications
-------------------
-
 * **Summary**: The follow API is a data exchange enabling API that is used to express interest in another entity's data. It could either be for reading the data, or writing, or b  oth. It is time-bound and the requestor has to explicitly mention the duration for which they would like to the data. Once a follow request is made, it goes to the 
   <device>.follow queue of the owner's device. The owner can then review the request and issue a ``/share``, thereby approving the follow request.
 
