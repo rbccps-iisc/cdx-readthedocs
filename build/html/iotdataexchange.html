@@ -83,11 +83,12 @@
 <li class="toctree-l1 current"><a class="reference internal" href="cdxsubsystems.html">CDX Subsystems</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="catalog.html">Catalog</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">IoT Data Exchange</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#data-exchange">Data Exchange</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#iot-data-streaming-service">IoT Data Streaming Service</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#iot-data-streaming-apis">IoT Data Streaming APIs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#iot-data-store-service">IoT Data Store Service</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#iot-data-marketplace-service">IoT Data Marketplace Service</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#iot-data-store-service">IoT Data Store Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#iot-data-marketplace-service">IoT Data Marketplace Service</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#iot-data-marketplace-apis">IoT Data Marketplace APIs</a></li>
 </ul>
 </li>
@@ -96,6 +97,7 @@
 <li class="toctree-l2"><a class="reference internal" href="mediadataexchange.html">Media Data Exchange</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="cdxusers.html">CDX Users</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quickwalkthrough.html">Quick Walkthrough</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apis.html">API Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
@@ -174,8 +176,6 @@
 <p>To enable multiple such new applications in a multiplicity where different solution providers are in contention to provide smart solutions, it is critical for smart cities to adopt an API based, platform approach towards exchanging, consuming, metering and monetising data.</p>
 <a class="reference internal image-reference" href="_images/arch.png"><img alt="alternate text" class="align-center" src="_images/arch.png" style="width: 800px; height: 500px;" /></a>
 <p>Figure 1 : Service overview of IoT Data Exchange</p>
-<div class="section" id="data-exchange">
-<h2>Data Exchange<a class="headerlink" href="#data-exchange" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
 <dt>To cater the requirements for an interoperable smartcity stack, we need sophisticated services in the Data Exchange as follows:</dt>
 <dd><ul class="first last simple">
@@ -187,7 +187,6 @@
 </ul>
 </dd>
 </dl>
-</div>
 <div class="section" id="iot-data-streaming-service">
 <h2>IoT Data Streaming Service<a class="headerlink" href="#iot-data-streaming-service" title="Permalink to this headline">¶</a></h2>
 <p>IoT Data Streaming Service is an IoT Message Bus for exchange of real-time time-series IoT data.
@@ -275,8 +274,9 @@ Services offered by an IoT Data Streaming Service are as follows:</p>
 </dd>
 </dl>
 </div>
+</div>
 <div class="section" id="iot-data-store-service">
-<h3>IoT Data Store Service<a class="headerlink" href="#iot-data-store-service" title="Permalink to this headline">¶</a></h3>
+<h2>IoT Data Store Service<a class="headerlink" href="#iot-data-store-service" title="Permalink to this headline">¶</a></h2>
 <p>An IoT Data Store shall be considered as an Online transaction processing (OLTP) system which shall contain a repository (source data) from which thorough inferences can be made about the data as well as the functioning of the smart city.  For example, these endpoints can be used for requesting the last known state of a streetlight or the values of the illuminance level over the past week, from a particular streetlight etc.</p>
 <p>The IoT Data Store can leverage the existence of an Online analytical processing (OLAP) layer within the CDX stack. OLAP shall be considered as a layer on top of time-series IoT Data store to perform analytics. It can perform Extract Transform Load (ETL) operations with complex aggregate queries to provide multi-dimensioned data. This OLAP system could be an analytics application providing more insights over the time-series IoT Data store. This analyzed multidimensional data can then be pushed back into the stack.</p>
 <a class="reference internal image-reference" href="_images/cdx_data_store.png"><img alt="alternate text" class="align-center" src="_images/cdx_data_store.png" style="width: 500px; height: 250px;" /></a>
@@ -331,7 +331,7 @@ Services offered by an IoT Data Streaming Service are as follows:</p>
 </div></blockquote>
 </div>
 <div class="section" id="iot-data-marketplace-service">
-<h3>IoT Data Marketplace Service<a class="headerlink" href="#iot-data-marketplace-service" title="Permalink to this headline">¶</a></h3>
+<h2>IoT Data Marketplace Service<a class="headerlink" href="#iot-data-marketplace-service" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
 <dt>IoT Data Marketplace Service will enable data monetization where users can provide Data as a service (DaaS). Marketplace will be a key enabler for building a rich ecosystem around the data exchange platform. This will provide opportunity to enable:</dt>
 <dd><ul class="first last simple">
@@ -382,7 +382,6 @@ Services offered by an IoT Data Streaming Service are as follows:</p>
 </ul>
 </dd>
 </dl>
-</div>
 <div class="section" id="iot-data-marketplace-apis">
 <h3>IoT Data Marketplace APIs<a class="headerlink" href="#iot-data-marketplace-apis" title="Permalink to this headline">¶</a></h3>
 <dl class="docutils">

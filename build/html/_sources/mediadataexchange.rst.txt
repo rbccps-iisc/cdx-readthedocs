@@ -136,8 +136,8 @@ For the example of a flying UAV sending raw video data to the platform, since, t
 
 Table 2: Example snippets from a meta-data stream for a mobile camera source like a drone
 
-Media Data Exchange
--------------------
+Media Data Streaming Service
+----------------------------
 
 A conceptual diagram of the  media data exchange platform is given in Figure 2. 
 

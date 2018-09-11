@@ -17,9 +17,6 @@ To enable multiple such new applications in a multiplicity where different solut
 
 Figure 1 : Service overview of IoT Data Exchange 
 
-Data Exchange
--------------
-
 To cater the requirements for an interoperable smartcity stack, we need sophisticated services in the Data Exchange as follows:
         - IoT Data Streaming Service
         - IoT Data Storage and Retrieval Service
@@ -77,7 +74,7 @@ Some architectural requirements that needs to be looked into for implementation 
         - Real-Time IoT Message Bus - for enabling low latency actuation of mission critical applications
 
 IoT Data Store Service
-^^^^^^^^^^^^^^^^^^^^^^
+----------------------
 
 An IoT Data Store shall be considered as an Online transaction processing (OLTP) system which shall contain a repository (source data) from which thorough inferences can be made about the data as well as the functioning of the smart city.  For example, these endpoints can be used for requesting the last known state of a streetlight or the values of the illuminance level over the past week, from a particular streetlight etc.
 
@@ -117,7 +114,7 @@ Some architectural requirements that needs to be looked into for implementation 
         - Ease of scale-out: There should be an option to linearly scale out when required. Hence, without too much intervention or configuration by developers, the database should support linear scalability and high availability.  
 
 IoT Data Marketplace Service 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------
 
 IoT Data Marketplace Service will enable data monetization where users can provide Data as a service (DaaS). Marketplace will be a key enabler for building a rich ecosystem around the data exchange platform. This will provide opportunity to enable:
         - Data economy 
