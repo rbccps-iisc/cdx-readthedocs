@@ -1,0 +1,508 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Catalog &mdash; CDX 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="IoT Data Exchange" href="iotdataexchange.html" />
+    <link rel="prev" title="CDX Subsystems" href="cdxsubsystems.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> CDX
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="gettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="cdxsubsystems.html">CDX Subsystems</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Catalog</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#data-schemas">Data Schemas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="iotdataexchange.html">IoT Data Exchange</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediadataexchange.html">Media Data Exchange</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="quickwalkthrough.html">Quick Walkthrough</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apis.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help.html">Help</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CDX</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="cdxsubsystems.html">CDX Subsystems</a> &raquo;</li>
+        
+      <li>Catalog</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/catalog.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="catalog">
+<h1>Catalog<a class="headerlink" href="#catalog" title="Permalink to this headline">¶</a></h1>
+<p>The information resource catalog is one of the key components of the CDX stack. It contains a list of data resources and their descriptions in a machine readable format. The resource descriptions may include API endpoints, and other meta-data like access hints, ownership, providers, structure of data, e.g., list of parameters and their descriptions etc. A useful analogy is the online shopping catalog, where a consumer can browse through available products, their features, reviews etc. and then decide to purchase a subscription or a copy of them. The resource catalog plays a similar role for the clients wishing to use the smart city resources and, as additional benefit, it can help nucleate the development of a new data/digital economy.</p>
+<p>Key services offered by resource catalog are:</p>
+<ol class="arabic simple">
+<li>Secure, authenticated, open API based<ul>
+<li>Discovery of information sources</li>
+<li>Addition/Modification of meta-data for new/existing resources</li>
+<li>Semantic search over resource meta-data</li>
+</ul>
+</li>
+<li>API framework supporting<ul>
+<li>Filtering of query results (For example, sorting, access modifier based filtering, specific field based filtering etc.)</li>
+<li>Grouping</li>
+</ul>
+</li>
+</ol>
+<p>As an example, Hypercat is a recent alliance which has developed a standard for a catalogue under the British Standards Institution (PAS212).  It is a lightweight, JSON based hypermedia catalogue format for exposing a collection of Uniform Resource Identifiers (URI) for IoT assets. The interactions with the catalogue use REST APIs over HTTP and the catalogue items are stored as RDF-like triples. RDF triples are essentially of the form “Subject, Predicate, Object” and can be used to encode relationships and hence provide a way to link the data/device parameters to external concepts. This will enable creating appropriate metadata for the devices that can then provide the right context and semantics for analysing the data from the IoT device. The framework allows a lot of flexibility in defining new annotations for new devices or information sources. In addition, Hypercat also advocates a few different search APIs, with a key one based on geographic indices. Another important feature in Hypercat is the possibility of having links to other catalogues. This is to enable federated/distributed growth of IoT resources which will be a very desirable property.</p>
+<div class="section" id="data-schemas">
+<h2>Data Schemas<a class="headerlink" href="#data-schemas" title="Permalink to this headline">¶</a></h2>
+<p>From the above, it is clear that the resource meta-data is the key element that enables data interoperability. However, this is possible only if the meta-data is described with a common vocabulary which is unambiguous and free from semantic conflicts.</p>
+<p>Open data schemas from all data sources (and actuators) needs to be developed to enable data interoperability. Key desirable features of data schemas are:</p>
+<ol class="arabic simple">
+<li>Flexibility to accommodate diverse nature of underlying data sources</li>
+<li>Describable in both human and machine-readable formats</li>
+<li>Should be accompanied by a rich set of tools to create, modify and validate schema data</li>
+<li>Should be extensible, allowing for easy enhancement</li>
+</ol>
+<p>There are many online repositories for schemas like json-schema.org  (for schema templates in JSON), www.oneiota.org for some data schemas for some IoT devices. In addition, projects like FiWare have also proposed schemas. We need to adapt and extend existing schemas (and develop new ones if they do not exist), to meet the needs for the IoT devices (and other data resources) for the Indian Smart Cities. As an example, we have discussed (and made publicly available) examples of schemas for  street light and power meter.</p>
+<p>Recently, Open Connectivity Foundation, which is an international consortium of companies and some academic institutions, has developed data schemas for many IoT devices.  The schemas are based on “JSON Schemas”. We find JSON-Schemas to be a better way to describe the metadata than that proposed in Hypercat as there are open-source tools readily available that allow schema creation, integrity checking of the schemas etc. (Essentially, JSON-schema allows a simple grammar to be defined and hence it is easy to check schemas against that). This will be particularly  important when one wants “user-contributed” schema development and deployment.</p>
+<p>We recommend combining the best features of Hypercat (API based access to catalogue, with powerful search capabilities), and OCF (JSON-Schema based information description to enable integrity checking). We believe that the structures proposed in OCF can be further extended as described next.</p>
+<p>As in OCF, we recommend to use JSON schemas to define the structure of each entry in the resource catalog. The schemas define specific fields to be included in the metadata for a given class of devices. Apart from mandating the inclusion of certain fields, there exist provisions to include (optional) device/vendor specific fields, e.g., links to reference ontologies, additional device information, usage hints etc., which enhances the usability of data by third party applications. The schemas are further used to validate the catalog entries at the time of on-boarding the device using the easily available json-schema validation tools.</p>
+<dl class="docutils">
+<dt>Towards defining the structure of catalog items, we propose to organize the metadata into following categories:</dt>
+<dd><ul class="first last">
+<li><p class="first">Static information: General information about the device/information resource, e.g., geo-location, type of device, ID, tags etc.</p>
+</li>
+<li><p class="first">Message sub-schemas: Meta-information for the various types of messages that the device/resource cand send or receive. Access to these messages can be provisioned based on individual message types. Examples include, but are not limited to, the following message types:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Observation messages:  Sensed parameters etc.</li>
+<li>Control messages: Actuation parameters accepted by the device, e.g., control inputs etc.</li>
+<li>Configuration messages: Configuration parameters of the device, e.g., sampling rates, sleep times etc.</li>
+<li>Management messages: Messages related to Device management.</li>
+<li>JSON-RPC messages and responses.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</dd>
+</dl>
+<p>Of course the above message types could be further extended in the future.</p>
+<p>A key idea is to store  dynamic meta-information within a catalog entry as a JSON-schema itself. Thus, the metadata becomes an actionable specification that can be used to dynamically validate various messages  being sent from/to the device (see Figure 1).</p>
+<a class="reference internal image-reference" href="_images/catalog_validation.png"><img alt="alternate text" class="align-center" src="_images/catalog_validation.png" style="width: 800px; height: 500px;" /></a>
+<p>Figure 1: A device schema in the catalog is validated against a global-meta-schema. Each data item coming from/to the device is further validated by the embedded schemas in the device schema. /cat is the API endpoint for the Information Resource Catalog in the CDX  stack.</p>
+<p>We give an example of a schema entry in the catalog for a smart streetlight</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;refCatalogueSchema&quot;</span><span class="p">:</span> <span class="s2">&quot;generic_iotdevice_schema.json&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;70b3d58ff0031de5&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;Onstreet&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;streetlight&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Energy&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;still under development!&quot;</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;refCatalogueSchemaRelease&quot;</span><span class="p">:</span> <span class="s2">&quot;0.1.0&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;latitude&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mf">13.0143335</span><span class="p">,</span>
+    <span class="s2">&quot;ontologyRef&quot;</span><span class="p">:</span> <span class="s2">&quot;http://www.w3.org/2003/01/geo/wgs84_pos#&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;longitude&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mf">77.5678424</span><span class="p">,</span>
+    <span class="s2">&quot;ontologyRef&quot;</span><span class="p">:</span> <span class="s2">&quot;http://www.w3.org/2003/01/geo/wgs84_pos#&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;owner&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Indian Institute of Science&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Id&quot;</span><span class="p">:</span> <span class="s2">&quot;IISC&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;website&quot;</span><span class="p">:</span> <span class="s2">&quot;http://www.iisc.ac.in&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;provider&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Robert Bosch Centre for Cyber Physical Systems, IISc&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Id&quot;</span><span class="p">:</span> <span class="s2">&quot;RBCCPS&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;website&quot;</span><span class="p">:</span> <span class="s2">&quot;http://rbccps.org&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;geoLocation&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;80 ft Road, Bangalore, 560012&quot;</span>
+  <span class="p">},</span>
+ <span class="s2">&quot;data_schema&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;observation_msg&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;direction&quot;</span><span class="p">:</span> <span class="s2">&quot;from-device&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;accessModifier&quot;</span><span class="p">:</span> <span class="s2">&quot;public&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="s2">&quot;on street&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;energy&quot;</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+           <span class="s2">&quot;dataSamplingInstant&quot;</span><span class="p">:</span> <span class="p">{</span>
+             <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Sampling Time in UTC format&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="s2">&quot;seconds&quot;</span>
+           <span class="p">},</span>
+           <span class="s2">&quot;caseTemperature&quot;</span><span class="p">:</span> <span class="p">{</span>
+             <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;number&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Temperature of the device casing&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="s2">&quot;degreeCelsius&quot;</span>
+           <span class="p">},</span>
+           <span class="s2">&quot;powerConsumption&quot;</span><span class="p">:</span> <span class="p">{</span>
+             <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;number&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Power consumption of the device&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="s2">&quot;watts&quot;</span>
+           <span class="p">},</span>
+           <span class="s2">&quot;luxOutput&quot;</span><span class="p">:</span> <span class="p">{</span>
+             <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;number&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;lux output of LED measured at LED&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="s2">&quot;lux&quot;</span>
+           <span class="p">},</span>
+           <span class="s2">&quot;ambientLux&quot;</span><span class="p">:</span> <span class="p">{</span>
+             <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;number&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;lux value of ambient&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="s2">&quot;lux&quot;</span>
+           <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;additionalProperties&quot;</span><span class="p">:</span> <span class="n">false</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;setpoints_msg&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;direction&quot;</span><span class="p">:</span> <span class="s2">&quot;from-device&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;accessModifier&quot;</span><span class="p">:</span> <span class="s2">&quot;protected&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[</span>
+           <span class="s2">&quot;on street&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;energy&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;control&quot;</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;targetPowerState&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;enum&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;ON&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;OFF&quot;</span>
+              <span class="p">]</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;targetBrightnessLevel&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;number&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Number between 0 to 100 to indicate the percentage brightness level.”,</span>
+              <span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="s2">&quot;percent&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;targetControlPolicy&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">&quot;enum&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;AUTO_TIMER&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;AUTO_LUX&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;MANUAL&quot;</span>
+              <span class="p">],</span>
+              <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Indicates which of the behaviours the device is currently set to. AUTO_TIMER is timer based, AUTO_LUX uses ambient light and MANUAL is controlled by app. Writeable only allowed for authorized apps&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;targetAutoTimerParams&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;targetOnTime&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;number&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Indicates time of day in seconds from 12 midnight when device turns ON in AUTO_TIMER.”,</span>
+                  <span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="s2">&quot;seconds&quot;</span>
+                <span class="p">},</span>
+                <span class="s2">&quot;targetOffTime&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;number&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Indicates time of day in seconds from 12 midnight when device turns OFF in AUTO_TIMER.”,</span>
+                  <span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="s2">&quot;seconds&quot;</span>
+                <span class="p">}</span>
+              <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;targetAutoLuxParams&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;targetOnLux&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;number&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Indicates ambient lux when device turns ON in AUTO_LUX.”,</span>
+                  <span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="s2">&quot;lux&quot;</span>
+                <span class="p">},</span>
+                <span class="s2">&quot;targetOffLux&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;number&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Indicates ambient lux when device turns OFF in AUTO_LUX.”,</span>
+                  <span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="s2">&quot;lux&quot;</span>
+                <span class="p">}</span>
+              <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;additionalProperties&quot;</span><span class="p">:</span> <span class="n">false</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+    <span class="s2">&quot;control_msg&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;direction&quot;</span><span class="p">:</span> <span class="s2">&quot;to-device&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;accessModifier&quot;</span><span class="p">:</span> <span class="s2">&quot;protected&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[</span>
+           <span class="s2">&quot;on street&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;energy&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;control&quot;</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;targetPowerState&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;enum&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;ON&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;OFF&quot;</span>
+              <span class="p">],</span>
+              <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;If set to ON, turns ON the device. If OFF turns OFF the device. Writeable parameter. Writeable only allowed for authorized apps&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;targetBrightnessLevel&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;number&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Number between 0 to 100 to indicate the percentage brightness level. Writeable only allowed for authorized apps&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="s2">&quot;percent&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;targetControlPolicy&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">&quot;enum&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;AUTO_TIMER&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;AUTO_LUX&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;MANUAL&quot;</span>
+              <span class="p">],</span>
+              <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Indicates which of the behaviours the device should implement. AUTO_TIMER is timer based, AUTO_LUX uses ambient light and MANUAL is controlled by app. Writeable only allowed for authorized apps&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;targetAutoTimerParams&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;targetOnTime&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;number&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Indicates time of day in seconds from 12 midnight when device turns ON in AUTO_TIMER. Writeable only allowed for authorized apps&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="s2">&quot;seconds&quot;</span>
+                <span class="p">},</span>
+                <span class="s2">&quot;targetOffTime&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;number&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Indicates time of day in seconds from 12 midnight when device turns OFF in AUTO_TIMER. Writeable only allowed for authorized apps&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="s2">&quot;seconds&quot;</span>
+                <span class="p">}</span>
+              <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;targetAutoLuxParams&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;targetOnLux&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;number&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Indicates ambient lux when device turns ON in AUTO_LUX. Writeable only allowed for authorized apps&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="s2">&quot;lux&quot;</span>
+                <span class="p">},</span>
+                <span class="s2">&quot;targetOffLux&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;number&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Indicates ambient lux when device turns OFF in AUTO_LUX. Writeable only allowed for authorized apps&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="s2">&quot;lux&quot;</span>
+                <span class="p">}</span>
+              <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;additionalProperties&quot;</span><span class="p">:</span> <span class="n">false</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;oneOf&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;required&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;observation_msg&quot;</span> <span class="p">]</span> <span class="p">},{</span><span class="s2">&quot;required&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;control_msg&quot;</span> <span class="p">]},{</span><span class="s2">&quot;required&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;setPoint_msg&quot;</span> <span class="p">]</span> <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Figure 2: Example catalogue schema for a smart streetlight</p>
+<p>There are two portions to the above schema, highlighted by the two shades. The first (in green shading) pertains to static information. The second part (light blue shaded) provides meta-information about various message types the device receives/sends. In the above example, the streetlight device has three messages:
+observation_msg: Observations made by the streetlight (caseTemperature, ambientLux etc.). This message flows “from-device” as is indicated by the keyword “direction”. For example, the streetlight measures “caseTemperature” which is a number and it describes the temperature of the light casing and its units are “degreeCelcius”.</p>
+<p>Control parameters for this device (targetPowerState, targetBrightnessLevel etc.). This message flows “to-device” as is indicated by the keyword “direction”. For example, the parameter “targetPowerState” can be used to switch ON (and OFF) the streetlight. This parameter is a dimensionless quantity.
+setPoint parameters for this device (targetPowerState, targetBrightnessLevel etc.). This message flows “from-device” as is indicated by the keyword “direction”. It indicates the values of writeable parameters which may have been set to certain values using control messages.</p>
+<p>The structure for streetlight catalog item is defined by the base schema ”generic_iotdevice_schema.json”.  This information is contained within the static information part of the item using the json fields, namely  “refCatalogueSchema” and “refCatalogueSchemaRelease”. To enable format validation of an uploaded catalog item, it should mandatorily mention the name of reference schema files and the schema release numbers.</p>
+<a class="reference internal image-reference" href="_images/catalog_message_validation.png"><img alt="alternate text" class="align-center" src="_images/catalog_message_validation.png" style="width: 800px; height: 500px;" /></a>
+<p>Figure 3: Streetlight observation and control data</p>
+<p>To highlight the validation features of the catalog,  we present an example of the observation, setPoint (up-arrow) and control (down arrow) data packets for the streetlight device in Figure 3. A key point is that, the observation schema which is stored in catalog (e.g., see the example streetlight item above), can be directly used to validate the incoming observation packets. The same applies to the control packets in the reverse direction.</p>
+<p>Another important field in the above example is the “ontologyRef” field included within “latitude” and “longitude” fields. This field provides a reference to a site where further explanation as to the meaning/semantics of the “key” can be found. For example, a website explicitly created to hold the ontology (dictionary) for that IoT device parameters in a standard ontology language (for example RDF).</p>
+<p>We recommend that an Indian City specific dictionary/ontology be created and which contains semantic descriptions of things which are unique to Indian cities and hence not available in other existing ontologies. The dictionary as well as the catalogue should be ideally made available in all Indian languages.
+The catalogue can be accessed and searched via HTTP(S) commands and hence will be accessible from anywhere in the web.
+We advocate a resource catalogue be a part of every smart city middleware instance and it adheres to a standard schema as well as an API format for querying.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="iotdataexchange.html" class="btn btn-neutral float-right" title="IoT Data Exchange" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cdxsubsystems.html" class="btn btn-neutral" title="CDX Subsystems" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Poorna Chandra Tejasvi.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

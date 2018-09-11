@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Install" href="install.html" />
+    <link rel="next" title="CDX Subsystems" href="cdxsubsystems.html" />
     <link rel="prev" title="Welcome to CDX" href="index.html" /> 
 
   
@@ -80,13 +80,17 @@
             
               <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisite">Prerequisite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cdx-installation">CDX Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#registering-your-first-device">Registering your first device</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cdxsubsystems.html">CDX Subsystems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickwalkthrough.html">Quick Walkthrough</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apis.html">API Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help.html">Help</a></li>
 </ul>
 
             
@@ -154,22 +158,69 @@
   <div class="section" id="getting-started">
 <h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
 <p>This guide will help you to quickly get started with a single node instance of CDX and start publishing data from a device.</p>
-<div class="section" id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
-<ul>
-<li><p class="first">Clone the project using:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">rbccps</span><span class="o">-</span><span class="n">iisc</span><span class="o">/</span><span class="n">ideam</span> <span class="o">&amp;&amp;</span> <span class="n">cd</span> <span class="n">ideam</span>
+<div class="section" id="prerequisite">
+<h2>Prerequisite<a class="headerlink" href="#prerequisite" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Install Docker</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">docker</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Make sure you have docker installed (<a class="reference external" href="https://docs.docker.com/v17.12/install/">Link</a>)</p>
-</li>
-<li><p class="first">Run:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">install</span>
+<li><p class="first">Add permission to user</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sudo usermod -a -G docker $USER
 </pre></div>
 </div>
 </li>
-</ul>
+<li><p class="first">Add DNS to the file /etc/docker/daemon.json. If it does not exist, create one</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;dns&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;8.8.8.8&quot;</span><span class="p">,</span> <span class="s2">&quot;8.8.4.4&quot;</span><span class="p">]}</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Add DNS in /etc/default/docker file</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DOCKER_OPTS</span><span class="o">=</span><span class="s2">&quot;--dns 8.8.8.8 --dns 8.8.4.4&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Restart Docker</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">service</span> <span class="n">docker</span> <span class="n">restart</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Install python</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">python</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Install git</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">git</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="cdx-installation">
+<h2>CDX Installation<a class="headerlink" href="#cdx-installation" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Clone CDX git repo</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">rbccps</span><span class="o">-</span><span class="n">iisc</span><span class="o">/</span><span class="n">ideam</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>CDX installation has a configuration file (ideam.conf), which details about the ports used by different services and also allows the user to configure the passwords that needs to be used for certain services during installation. By default, the password field in the config file is set to ?, which indicates the system to generate password during run-time</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">ideam</span><span class="o">/</span>
+<span class="n">vim</span> <span class="n">ideam</span><span class="o">.</span><span class="n">conf</span>
+<span class="n">make</span> <span class="n">necessary</span> <span class="n">changes</span>
+</pre></div>
+</div>
+<ol class="arabic">
+<li><p class="first">Install CDX</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">ideam</span><span class="o">/</span>
+<span class="o">./</span><span class="n">instal</span>
+</pre></div>
+</div>
+</li>
+</ol>
 </div>
 <div class="section" id="registering-your-first-device">
 <h2>Registering your first device<a class="headerlink" href="#registering-your-first-device" title="Permalink to this headline">¶</a></h2>
@@ -212,7 +263,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="install.html" class="btn btn-neutral float-right" title="Install" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="cdxsubsystems.html" class="btn btn-neutral float-right" title="CDX Subsystems" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral" title="Welcome to CDX" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

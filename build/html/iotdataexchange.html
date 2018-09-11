@@ -1,0 +1,488 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>IoT Data Exchange &mdash; CDX 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Media Data Exchange" href="mediadataexchange.html" />
+    <link rel="prev" title="Catalog" href="catalog.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> CDX
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="gettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="cdxsubsystems.html">CDX Subsystems</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="catalog.html">Catalog</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">IoT Data Exchange</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#data-exchange">Data Exchange</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#iot-data-streaming-service">IoT Data Streaming Service</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#iot-data-streaming-apis">IoT Data Streaming APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#iot-data-store-service">IoT Data Store Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#iot-data-marketplace-service">IoT Data Marketplace Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#iot-data-marketplace-apis">IoT Data Marketplace APIs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mediadataexchange.html">Media Data Exchange</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="quickwalkthrough.html">Quick Walkthrough</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apis.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help.html">Help</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CDX</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="cdxsubsystems.html">CDX Subsystems</a> &raquo;</li>
+        
+      <li>IoT Data Exchange</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/iotdataexchange.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="iot-data-exchange">
+<h1>IoT Data Exchange<a class="headerlink" href="#iot-data-exchange" title="Permalink to this headline">¶</a></h1>
+<p>IoT devices are the key behind building a Smart City which enables efficient management of services offered by a City. These devices can range from being simple ones such as a temperature sensor to a more complex and sophisticated ones such as video cameras. Data produced by these devices will lead to building smart applications for managing the city efficiently. For example, Smart Waste Management, Smart Street Light Management, Smart Water Management, Smart Energy Management, Smart traffic Management etc.</p>
+<p>A problem which we see currently is the siloed solution provided by application or solution vendors to build smartness into the city infrastructure. For example, a Smart Energy Monitoring and Control application will not be able to consume the data produced by a Smart traffic Management system or have the possibility to control the Street Lights using the Smart Street Light Management system in order to optimise the power usage. This makes us realize that building a common platform for bringing in the data from multiple silos a necessity for interoperability and efficient management of data.</p>
+<p>To enable multiple such new applications in a multiplicity where different solution providers are in contention to provide smart solutions, it is critical for smart cities to adopt an API based, platform approach towards exchanging, consuming, metering and monetising data.</p>
+<a class="reference internal image-reference" href="_images/arch.png"><img alt="alternate text" class="align-center" src="_images/arch.png" style="width: 800px; height: 500px;" /></a>
+<p>Figure 1 : Service overview of IoT Data Exchange</p>
+<div class="section" id="data-exchange">
+<h2>Data Exchange<a class="headerlink" href="#data-exchange" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>To cater the requirements for an interoperable smartcity stack, we need sophisticated services in the Data Exchange as follows:</dt>
+<dd><ul class="first last simple">
+<li>IoT Data Streaming Service</li>
+<li>IoT Data Storage and Retrieval Service</li>
+<li>IoT Data Monetization Service</li>
+<li>IoT Device Configuration and Control Service</li>
+<li>Secure, authenticated, authorised and access controlled ways to access data exchange via APIs</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="iot-data-streaming-service">
+<h2>IoT Data Streaming Service<a class="headerlink" href="#iot-data-streaming-service" title="Permalink to this headline">¶</a></h2>
+<p>IoT Data Streaming Service is an IoT Message Bus for exchange of real-time time-series IoT data.
+Services offered by an IoT Data Streaming Service are as follows:</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="first docutils">
+<dt>Dynamic Data Ingestion</dt>
+<dd><ul class="first last">
+<li>Secure, authenticated, authorised framework to enable ingestion of data</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Data Distribution</dt>
+<dd><ul class="first last">
+<li>Secure, authenticated, authorised framework to enable development of new services and applications which consumes the data produced by the various data sources</li>
+<li>Framework to support decoupling and asynchrony between the producers and consumers</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Data Metering</dt>
+<dd><ul class="first last">
+<li>Secure, authenticated, authorised framework to enable metering of data for both time-based and data-size based access</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Data Streaming APIs</dt>
+<dd><ul class="first last">
+<li>Secure, authenticated, authorised, access controlled API framework for interacting with the data streaming service</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Multi-Protocol support</dt>
+<dd><ul class="first last">
+<li>Support for diverse set of application protocols which can be used to implement the APIs and include: AMQP, STOMP, XMPP, WebSockets and HTTP</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<div class="section" id="iot-data-streaming-apis">
+<h3>IoT Data Streaming APIs<a class="headerlink" href="#iot-data-streaming-apis" title="Permalink to this headline">¶</a></h3>
+<p>IoT data exchange shall have endpoints to access services in a secure, authenticated, authorised, access controlled way.</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="first docutils">
+<dt>Publication</dt>
+<dd><ul class="first last">
+<li>Publication to CDX stack is done by Devices (sensors, virtual sensors) and Applications (device controllers, device managers etc.). The IoT data streaming service should provide necessary interface to devices (for sending sensed information) and applications (for sending control commands and configuration changes) through specific endpoints.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Subscription</dt>
+<dd><ul class="first last">
+<li>Similar to publication, a subscription to CDX stack is done by Devices (for receiving control commands and configuration changes)  and Applications  (for receiving sensed information). The IoT data streaming service should provide necessary interface to devices and applications through specific endpoints.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<a class="reference internal image-reference" href="_images/cdx_data_publish.png"><img alt="alternate text" class="align-center" src="_images/cdx_data_publish.png" style="width: 600.0px; height: 400.0px;" /></a>
+<p>Figure 2 : Streetlight observation and control data</p>
+<p>The above example is that of a streetlight publishing sensed data (red-block with up-arrow) and subscribing commands or configuration parameters (green-block with down-arrow) as per the schema provided during on-boarding. As a security policy, the system should make necessary validation and security checks to prevent devices from publishing data that doesn’t adhere to the schema defined during on-boarding.</p>
+<dl class="docutils">
+<dt>Some architectural requirements that needs to be looked into for implementation of data exchange platform are as follows:</dt>
+<dd><ul class="first last simple">
+<li>Reliable delivery - Support for providing a reliable message delivery using a protocols which are well tested, reliable, and optimized for high-data traffic</li>
+<li>Secure transactions - Support Authentication, Authorization and mechanisms to include Network Security</li>
+<li>Operational Maintenance - Support Monitoring, Auditing and Troubleshooting of the messaging system</li>
+<li>Uninterrupted Scaling - Support scalability through distributed and clustered modes of operation</li>
+<li>Real-Time IoT Message Bus - for enabling low latency actuation of mission critical applications</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="iot-data-store-service">
+<h3>IoT Data Store Service<a class="headerlink" href="#iot-data-store-service" title="Permalink to this headline">¶</a></h3>
+<p>An IoT Data Store shall be considered as an Online transaction processing (OLTP) system which shall contain a repository (source data) from which thorough inferences can be made about the data as well as the functioning of the smart city.  For example, these endpoints can be used for requesting the last known state of a streetlight or the values of the illuminance level over the past week, from a particular streetlight etc.</p>
+<p>The IoT Data Store can leverage the existence of an Online analytical processing (OLAP) layer within the CDX stack. OLAP shall be considered as a layer on top of time-series IoT Data store to perform analytics. It can perform Extract Transform Load (ETL) operations with complex aggregate queries to provide multi-dimensioned data. This OLAP system could be an analytics application providing more insights over the time-series IoT Data store. This analyzed multidimensional data can then be pushed back into the stack.</p>
+<a class="reference internal image-reference" href="_images/cdx_data_store.png"><img alt="alternate text" class="align-center" src="_images/cdx_data_store.png" style="width: 500px; height: 250px;" /></a>
+<p>Figure 3 : CDX view of a Data Store and Warehouse</p>
+<dl class="docutils">
+<dt>Services offered by an IoT Data Store Service are as follows:</dt>
+<dd><ul class="first last simple">
+<li><dl class="first docutils">
+<dt>Data Querying</dt>
+<dd><ul class="first last">
+<li>Secure, authenticated, authorised framework to support multi-dimensional queries</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Data Analytics</dt>
+<dd><ul class="first last">
+<li>Secure, authenticated, authorised framework to submit analytic queries</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Multi-Data Indexing</dt>
+<dd><ul class="first last">
+<li>Support for providing multi-dimensioned or multi index data for ease of querying</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Data Store APIs</dt>
+<dd><ul class="first last">
+<li>Well defined APIs to interact with the datastore for ease of operation</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<a class="reference internal image-reference" href="_images/cdx_multi_dim_data_store.png"><img alt="alternate text" class="align-center" src="_images/cdx_multi_dim_data_store.png" style="width: 600px; height: 400px;" /></a>
+<p>Figure 4 : Multidimensional indexed view of a Data Store</p>
+<p>Some architectural requirements that needs to be looked into for implementation of Data Store is given below:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Swift write performance: There will be numerous sensors sending multiple data points per second. Hence the write performance of the database should be swift.</li>
+<li>Flexible query performance: The specifications of data required for analytics by a data warehouse range from being narrow to wide. This requirement should be handled by the database. Querying should be flexible as well fast.</li>
+<li>Ease of scale-out: There should be an option to linearly scale out when required. Hence, without too much intervention or configuration by developers, the database should support linear scalability and high availability.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="iot-data-marketplace-service">
+<h3>IoT Data Marketplace Service<a class="headerlink" href="#iot-data-marketplace-service" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>IoT Data Marketplace Service will enable data monetization where users can provide Data as a service (DaaS). Marketplace will be a key enabler for building a rich ecosystem around the data exchange platform. This will provide opportunity to enable:</dt>
+<dd><ul class="first last simple">
+<li>Data economy</li>
+<li>Interoperability</li>
+<li>Improve Data Quality</li>
+<li>Crowdsourcing</li>
+</ul>
+</dd>
+</dl>
+<a class="reference internal image-reference" href="_images/cdx_data_mplace.png"><img alt="alternate text" class="align-center" src="_images/cdx_data_mplace.png" style="width: 500px; height: 600px;" /></a>
+<p>Figure 5 :  Data Marketplace workflow</p>
+<dl class="docutils">
+<dt>Services offered by an IoT Data Marketplace Service are as follows:</dt>
+<dd><ul class="first last simple">
+<li><dl class="first docutils">
+<dt>Data Discovery</dt>
+<dd><ul class="first last">
+<li>Secure, authenticated, authorised discovery framework for searching and discovering available data sources. This shall be enabled by the Catalog service</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Data Following</dt>
+<dd><ul class="first last">
+<li>Secure, authenticated, authorised data following framework for requesting access for interested data sources</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Data Payment</dt>
+<dd><ul class="first last">
+<li>Secure, authenticated, authorised payment framework for accessing interested data sources</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Data Sharing</dt>
+<dd><ul class="first last">
+<li>Secure, authenticated, authorised data sharing framework for allowing interested users to obtain data</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="iot-data-marketplace-apis">
+<h3>IoT Data Marketplace APIs<a class="headerlink" href="#iot-data-marketplace-apis" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>IoT data marketplace shall have endpoints to access services in a secure, authenticated, authorised, access controlled way. The marketplace should be envisioned to be build over the definitions around INDIA Stack</dt>
+<dd><ul class="first last simple">
+<li><dl class="first docutils">
+<dt>Follow</dt>
+<dd><ul class="first last">
+<li>Follow endpoint in IoT data marketplace should provide necessary interface for showing interest to data sources through specific endpoints.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Payment</dt>
+<dd><ul class="first last">
+<li>Payment endpoint in IoT data marketplace should provide necessary interface for initiating digital payment between consumers and producers of data through specific endpoints. The interface shall be based on Unified Payment Interface (UPI)</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Share</dt>
+<dd><ul class="first last">
+<li>Share endpoint in IoT data marketplace should provide necessary interface for allowing provider of data to approve interested parties to access data sources through specific endpoints.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mediadataexchange.html" class="btn btn-neutral float-right" title="Media Data Exchange" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="catalog.html" class="btn btn-neutral" title="Catalog" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Poorna Chandra Tejasvi.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

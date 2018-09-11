@@ -1,0 +1,364 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Media Data Exchange &mdash; CDX 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Quick Walkthrough" href="quickwalkthrough.html" />
+    <link rel="prev" title="IoT Data Exchange" href="iotdataexchange.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> CDX
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="gettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="cdxsubsystems.html">CDX Subsystems</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="catalog.html">Catalog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iotdataexchange.html">IoT Data Exchange</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Media Data Exchange</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#meta-information-for-video-and-media-streams">Meta Information for Video (and Media) streams</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Media Data Exchange</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="quickwalkthrough.html">Quick Walkthrough</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apis.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help.html">Help</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CDX</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="cdxsubsystems.html">CDX Subsystems</a> &raquo;</li>
+        
+      <li>Media Data Exchange</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/mediadataexchange.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="media-data-exchange">
+<h1>Media Data Exchange<a class="headerlink" href="#media-data-exchange" title="Permalink to this headline">¶</a></h1>
+<p>Cameras are amongst the key data resources for smart cities. They have the potential to enable smart applications that touch almost all aspects of daily urban life; automated surveillance, intelligent transport management systems, traffic management systems, smart parking systems, infrastructure monitoring to name a few.  For example, networked IP cameras can be used to collect real-time data about vehicle counts, road congestions, accidents, vehicle breakdowns etc., which can help city officials manage the traffic better. The same video streams can be used to collect live road-side parking data that can provide better parking management systems. Further, the same camera feeds can aid security aspects by providing data about crowd build up etc. and help officials react faster to a growing situation in real time.</p>
+<p>Currently, various smart city applications are operating as vertical silos with very little cooperation amongst each other. This problem is especially acute when it comes to sharing of video data. For example, the police department may have thousands of cameras across the city for surveillance, the traffic police may have hundreds of cameras at traffic junctions for traffic management and the transport department may have several cameras in bus-fleets, depots etc. with no way of sharing data with each other and/or with other public or private smart city ecosystem partners. Further, there may be many private producers of data that may be of interest to smart city operations, e.g., privately owned campus cameras, car fleet videos, public shopping arena videos etc. Sharing video data and the corresponding meta-data across various public/private entities will help break these silos and enable efficient and cost-effective operations.</p>
+<p>One can view the combination of raw video/audio stream and corresponding analytics software as an intelligent sensor conveying specific information summarized from the input media content. Such meta-data streams containing data summaries are highly desirable as it allows downstream applications to avoid looking at raw media streams. In addition,  one can use the meta-media streams to “correlate” data across multiple such and other IoT streams available from various entities present in a given spatial or temporal space. Sharing media data and the associated meta-media streams will accelerate ushering in an era of  futuristic AI applications for smart cities.</p>
+<p>To enable multiple such new applications, and especially by a multiplicity of different solution providers, it is critical that smart cities adopt an API based, platform approach towards exchanging and consuming video and media meta-data, similar to those for IoT data.</p>
+<p>The following are the key requirements to create such a platform:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">[Media Meta-Data] A framework that supports associating a meta-data stream to raw media streams, that contain additional information of relevance to the semantic content of the raw media stream,          and that enables easy discovery and additional value creation by downstream analytics applications.</p>
+</li>
+<li><p class="first">[Media Data Exchange] An  API based, scalable, media data exchange platform, that allows for:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Easy discovery of media resources</li>
+<li>Secure, authenticated, privacy preserving and accountable access for consuming live and archived media streams</li>
+<li>Secure, authenticated and accountable access for supplying live and archived media streams</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<div class="section" id="meta-information-for-video-and-media-streams">
+<h2>Meta Information for Video (and Media) streams<a class="headerlink" href="#meta-information-for-video-and-media-streams" title="Permalink to this headline">¶</a></h2>
+<p>Value of data grows in proportion to the number of people who can use it. One critical necessary condition for successful usage of data, is availability of meta-data - i.e. data about the data. Example meta information include: time when data was captured, location from where it was captured, pose of the camera, etc. Such meta information adds a lot of value to the data itself and makes it easier to analyze. While the exact meta-data is application dependent and cannot be dictated in general, one can create a standard framework within which to capture and report the meta-data of media streams like video, audio etc. While many encoding formats already capture some meta-information, they are mostly about the encoding aspects. In addition to those, from  the perspective of analytics especially, it is very useful to also have meta-data that is about the semantic content of the streams. This meta-data stream is adjoint (in parallel to) to the raw media stream as depicted in Figure 1.  Some examples of meta-data content streams include:</p>
+<blockquote>
+<div><ul class="simple">
+<li>GPS/Pose time series data attached to media data for mobile media sources (e.g. for video streams from drones)</li>
+<li>Time series data of specific objects and their bounding boxes (e.g. times and number of diesel vehicles at a particular junction)</li>
+<li>Time series data about certain events (e.g. cows crossing the road)</li>
+<li>Semantic summary of the entire stream (e.g. live stream of an accident at south end ‘*’circle)</li>
+</ul>
+</div></blockquote>
+<p>These meta-data streams can be generated by video-analytic softwares or by an agent that has access to other sensors. A key idea is to treat these meta-data streams also as any other IoT sensor stream. That is, these can be consumed via the platform and have an associated data-schema (that describes what information is contained in the stream) and this schema is stored in the resource catalog.</p>
+<a class="reference internal image-reference" href="_images/video_iot.png"><img alt="alternate text" class="align-center" src="_images/video_iot.png" style="width: 800px; height: 500px;" /></a>
+<p>Figure 1 : IoT view of video data</p>
+<p>An example schema for meta-information for a mobile camera is given below</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{
+&quot;refCatalogueSchema&quot;: &quot;meta-media-schema.json&quot;,
+&quot;id&quot;: &quot;Meta1_RS1&quot;,//Unique Identifier for this Meta-Media stream
+&quot;resourceType&quot;: &quot;meta-media stream&quot;,
+&quot;sourceId&quot;: &quot;RS1&quot;, //Unique Identifier for source Media stream for which this meta  stream is for”
+&quot;tags&quot;: [
+  &quot;drone&quot;,
+  &quot;Camera&quot;,
+  &quot;Position&quot;
+],
+&quot;refCatalogueSchemaRelease&quot;: &quot;0.1.0&quot;,
+&quot;Description&quot;: &quot;Meta information for camera feed from Drone 80b3d58ff003AAe5&quot;
+&quot;owner&quot;: {
+   &quot;name&quot;: &quot;IISC&quot;,
+   &quot;website&quot;: &quot;http://www.iisc.ac.in&quot;
+},
+&quot;provider&quot;: {
+   &quot;name&quot;: &quot;Robert Bosch Centre for Cyber Physical Systems, IISc&quot;,
+   &quot;website&quot;: &quot;http://rbccps.org&quot;
+},
+&quot;data_schema&quot;: {
+    &quot;type&quot;: &quot;object&quot;,
+    &quot;properties&quot;: {
+    &quot;onboard_analytics_msg&quot;: {
+    &quot;type&quot;: &quot;object&quot;,
+    &quot;direction&quot;: &quot;from-device&quot;,
+    &quot;access-modifier&quot;: &quot;public&quot;,
+    &quot;tags&quot;: [&quot;smoke detection&quot;, &quot;location&quot;],
+    &quot;properties&quot;: {
+              &quot;timestamp&quot;: {
+              &quot;type&quot;: &quot;number&quot;,
+              &quot;description&quot;: &quot;Time in EPOCH format&quot;,
+              &quot;units&quot;: &quot;milliseconds&quot;
+              },
+              &quot;streamPointerStart&quot;: {
+              &quot;type&quot;: &quot;number&quot;,
+              &quot;description&quot;: &quot;ptr into the start of the media stream portion for this meta info&quot;
+              },
+          &quot;streamPointerEnd&quot;: {
+              &quot;type&quot;: &quot;number&quot;,
+              &quot;description&quot;: &quot;pointer into the end of the media stream portion for this meta info&quot;
+              },
+              &quot;eventTimeStart&quot;: {
+                &quot;type&quot;: &quot;number&quot;,
+                &quot;description&quot;: &quot;Start time for this meta info in EPOCH format&quot;
+              },
+              &quot;eventTimeEnd&quot;: {
+                 &quot;type&quot;: &quot;number&quot;,
+                 &quot;description&quot;: &quot;End time for this meta info in EPOCH format&quot;
+              },
+              &quot;latitude&quot;: {
+             &quot;type&quot;: &quot;number&quot;,
+             &quot;description&quot;: &quot;latitude as per WGS84&quot;,
+             &quot;ontologyRef&quot;: &quot;http://www.w3.org/2003/01/geo/wgs84_pos#&quot;,
+             &quot;units&quot;: &quot;degrees&quot;
+          },
+              &quot;longitude&quot;: {
+             &quot;type&quot;: &quot;number&quot;,
+             &quot;description&quot;: &quot;latitude as per WGS84&quot;,
+             &quot;ontologyRef&quot;: &quot;http://www.w3.org/2003/01/geo/wgs84_pos#&quot;,
+             &quot;units&quot;: &quot;degrees&quot;
+              },
+              &quot;smoke_detected&quot;: {
+             &quot;type&quot;: &quot;boolean&quot;,
+             &quot;description&quot;: &quot;Indicates if the smoke is detected in the video stream or not &quot;
+              }
+    }
+     }
+   }
+}
+}
+</pre></div>
+</div>
+<p>Table 1: Schema to describe a Meta Video Stream which gives additional information about the geolocation of the camera at various time instances.</p>
+<p>As shown in Table 1, the meta-media stream packets may contain broadly the following fields (in the dataobject section)</p>
+<blockquote>
+<div><ul class="simple">
+<li>timestamp:  The time stamp at the time of packet generation in a pre-specified epoch</li>
+<li>streamPointerStart, streamPointerEnd: These fields provide a linkage to the source video stream. It specifies the parts of video stream this particular meta-data packet pertains to. These fields provide synchronization across various meta-information streams that are linked to the same video and will also help overlay meta-information with the display contents of the video. Further, it can help validation of meta-information that is generated by analytics software.</li>
+<li>eventStartTime, eventEndTime: These fields provide time indication for the start and end of the event/information described in this data packet.</li>
+<li>Meta-information fields: These contain the actual meta-information.</li>
+</ul>
+</div></blockquote>
+<p>For the example of a flying UAV sending raw video data to the platform, since, the location of UAV is continuously changing it will be hard to ascertain the position of camera just by looking at the raw stream. However, the UAV can use its onboard GPS sensor and generate a meta-data stream which provides information about the position of UAV as time series data (Table 2)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Onboard_analytics_msg&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;timestamp”:987565432768,&quot;</span><span class="n">streamPointerStart</span><span class="s2">&quot;:234615,&quot;</span><span class="n">streamPointerEnd</span><span class="s2">&quot;:234616,&quot;</span><span class="n">latitude</span><span class="s2">&quot;:13.013846,&quot;</span><span class="n">longitude</span><span class="s2">&quot;:77.570311, &quot;</span><span class="n">smoke_detected</span><span class="s2">&quot;: TRUE</span>
+<span class="p">}</span>
+<span class="s2">&quot;Onboard_analytics_msg&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span><span class="mi">987565432769</span><span class="p">,</span><span class="s2">&quot;streamPointerStart&quot;</span><span class="p">:</span><span class="mi">234617</span><span class="p">,</span><span class="s2">&quot;streamPointerEnd&quot;</span><span class="p">:</span><span class="mi">234618</span><span class="p">,</span><span class="s2">&quot;latitude&quot;</span><span class="p">:</span><span class="mf">13.023846</span><span class="p">,</span><span class="s2">&quot;longitude&quot;</span><span class="p">:</span><span class="mf">77.571311</span><span class="p">,</span> <span class="s2">&quot;smoke_detected&quot;</span><span class="p">:</span> <span class="n">TRUE</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Table 2: Example snippets from a meta-data stream for a mobile camera source like a drone</p>
+</div>
+<div class="section" id="id1">
+<h2>Media Data Exchange<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="quickwalkthrough.html" class="btn btn-neutral float-right" title="Quick Walkthrough" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="iotdataexchange.html" class="btn btn-neutral" title="IoT Data Exchange" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Poorna Chandra Tejasvi.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

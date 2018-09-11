@@ -27,9 +27,7 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="API Documentation" href="apis.html" />
-    <link rel="prev" title="Getting Started" href="gettingStarted.html" /> 
+    <link rel="search" title="Search" href="search.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -78,11 +76,15 @@
               
             
             
-              <ul class="current">
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="gettingStarted.html">Getting Started</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cdxsubsystems.html">CDX Sub Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickinstall.html">Quick Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickwalkthrough.html">Quick Walkthrough</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apis.html">API Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help.html">Help</a></li>
 </ul>
 
             
@@ -149,30 +151,77 @@
             
   <div class="section" id="install">
 <h1>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Install docker by using:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">docker</span><span class="o">.</span><span class="n">io</span>
+<li><p class="first">Install Docker</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">docker</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Once docker is installed, add the current user to the docker group by:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sudo usermod -aG docker $USER
+<li><p class="first">Add permission to user</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sudo usermod -a -G docker $USER
 </pre></div>
 </div>
 </li>
-<li><p class="first">Logout and log back in for the changes to take effect.</p>
-</li>
-<li><p class="first">Now, clone the repository using:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">rbccps</span><span class="o">-</span><span class="n">iisc</span><span class="o">/</span><span class="n">ideam</span> <span class="o">&amp;&amp;</span> <span class="n">cd</span> <span class="n">ideam</span>
+<li><p class="first">Add DNS to the file /etc/docker/daemon.json. If it does not exist, create one</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;dns&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;8.8.8.8&quot;</span><span class="p">,</span> <span class="s2">&quot;8.8.4.4&quot;</span><span class="p">]}</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Once inside the directory, install by using:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">install</span>
+<li><p class="first">Add DNS in /etc/default/docker file</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DOCKER_OPTS</span><span class="o">=</span><span class="s2">&quot;--dns 8.8.8.8 --dns 8.8.4.4&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Restart Docker</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">service</span> <span class="n">docker</span> <span class="n">restart</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Install python</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">python</span>
+</pre></div>
+</div>
+</li>
+<li><dl class="first docutils">
+<dt>Install python-pip and pass-lib ::</dt>
+<dd><p class="first last">sudo apt install python-pip
+pip install passlib</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">Install git</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">git</span>
 </pre></div>
 </div>
 </li>
 </ol>
+</div>
+<div class="section" id="cdx-installation">
+<h2>CDX Installation<a class="headerlink" href="#cdx-installation" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Clone CDX git repo</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">rbccps</span><span class="o">-</span><span class="n">iisc</span><span class="o">/</span><span class="n">ideam</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>CDX installation has a configuration file (ideam.conf), which details about the ports used by different services and also allows the user to configure the passwords that needs to be used for certain services during installation. By default, the password field in the config file is set to ?, which indicates the system to generate password during run-time</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">ideam</span><span class="o">/</span>
+<span class="n">vim</span> <span class="n">ideam</span><span class="o">.</span><span class="n">conf</span>
+<span class="n">make</span> <span class="n">necessary</span> <span class="n">changes</span>
+</pre></div>
+</div>
+<ol class="arabic">
+<li><p class="first">Install CDX</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">ideam</span><span class="o">/</span>
+<span class="o">./</span><span class="n">install</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
 </div>
 
 
@@ -180,15 +229,6 @@
            
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="apis.html" class="btn btn-neutral float-right" title="API Documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="gettingStarted.html" class="btn btn-neutral" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>

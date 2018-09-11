@@ -25,7 +25,10 @@ Contents:
    :maxdepth: 2
 
    gettingStarted
-   install
+   cdxsubsystems
+   quickwalkthrough
    apis
    usage
+   license
+   help
 

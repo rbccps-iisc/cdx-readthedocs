@@ -3,6 +3,15 @@ Usage
 
 The following workflow will attempt to illustrate the typical usage of the smart city stack.
 
+.. image:: usage.png
+    :width: 600px
+    :align: center
+    :height: 600px
+    :alt: alternate text
+
+Figure 1 : Usage overview of CDX
+
+
 #. Consider that two devices have registered with the middleware viz. "streetlight" and "app". 
    The API keys obtained are as follows:
    
