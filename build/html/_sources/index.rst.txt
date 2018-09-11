@@ -26,6 +26,7 @@ Contents:
 
    gettingStarted
    cdxsubsystems
+   cdxusers
    quickwalkthrough
    apis
    usage

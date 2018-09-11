@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -9,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Index &mdash; CDX 1.0.0 documentation</title>
+  <title>CDX Users &mdash; CDX 1.0.0 documentation</title>
   
 
   
@@ -27,8 +26,10 @@
 
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="index" title="Index" href="#" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Quick Walkthrough" href="quickwalkthrough.html" />
+    <link rel="prev" title="Media Data Exchange" href="mediadataexchange.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -77,10 +78,10 @@
               
             
             
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="gettingStarted.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cdxsubsystems.html">CDX Subsystems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cdxusers.html">CDX Users</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">CDX Users</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quickwalkthrough.html">Quick Walkthrough</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apis.html">API Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
@@ -131,12 +132,14 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Index</li>
+      <li>CDX Users</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
+            <a href="_sources/cdxusers.rst.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
     
@@ -148,11 +151,35 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
+  <div class="section" id="cdx-users">
+<h1>CDX Users<a class="headerlink" href="#cdx-users" title="Permalink to this headline">¶</a></h1>
+<p>The CDX mainly consist of 3 types of users:</p>
+<ol class="arabic simple">
+<li><strong>Human users (or owners)</strong> : who own devices and apps that are to be connected with the CDX.</li>
+<li><strong>Subscribers</strong> : The devices or apps whose main purpose to connect with the CDX is to subscribe for data.</li>
+<li><strong>Publishers</strong> : The devices or apps whose main purpose to connect with the CDX is to publish data.</li>
+</ol>
+<p>Each owner after successful registration with the CDX is provided with:</p>
+<ol class="arabic simple">
+<li><strong>Owner’s follow bus created at the CDX</strong> : The purpose of this bus is to allow other users to request for accessing owner’s devices/apps. Thus, this bus is writable by all valid users.</li>
+<li><strong>Owner’s follow queue created at the CDX</strong> : This queue allows the owner to get the follow requests mentioned above. This queue can only be controlled by the owner.</li>
+</ol>
+<p>Each subscriber after successful registration with CDX is provided with:</p>
+<ol class="arabic simple">
+<li><strong>Subscriber’s queue</strong> : This queue provides the subscriber with the messages from devices/apps which the subscriber has subscribed to. This queue can only be controlled by the owner of the subscriber.</li>
+<li><strong>Subscriber’s priority queue</strong> : This queue provides messages of high priority and is typically used for low latency messages. This queue can only be controlled by the owner of the subscriber.</li>
+<li><strong>Subscriber’s control bus</strong> : This bus allows other who have been given explicit write access by the owner of the subscriber to the bus to send control messages to the subscriber.</li>
+<li><strong>Subscriber’s control queue</strong> : This queue allows the subscriber to receive messages sent to the Subscriber’s control bus. This queue can only be controlled by the owner of the subscriber.</li>
+</ol>
+<p>Each publisher after successful registration with CDX is provided with:</p>
+<ol class="arabic simple">
+<li><strong>Publisher’s public bus</strong> : A bus where the publisher can send messages which any valid user can read.</li>
+<li><strong>Publisher’s protected bus</strong> : A bus where the publisher can send messages which can be read by a user to whom explicit permission has been given by the owner of the publisher.</li>
+<li><strong>Publisher’s private bus</strong> : A bus where the publisher can send messages which can only be read by the owner or the publisher itself.</li>
+<li><strong>Publisher’s priority bus</strong> : A bus where the publisher can send important messages, and can be read by an authorized user. This bus is used to publish low latency messages, and is typically subscribed using a priority queue of a subscriber.</li>
+<li><strong>Publisher’s control bus</strong> : A bus where any authorized user can send control messages for the publisher</li>
+<li><strong>Publisher’s control queue</strong> : A queue where control messages sent to the publisher can be read from.</li>
+</ol>
 </div>
 
 
@@ -160,6 +187,15 @@
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="quickwalkthrough.html" class="btn btn-neutral float-right" title="Quick Walkthrough" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mediadataexchange.html" class="btn btn-neutral" title="Media Data Exchange" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
