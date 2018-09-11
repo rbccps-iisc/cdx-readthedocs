@@ -139,4 +139,79 @@ Table 2: Example snippets from a meta-data stream for a mobile camera source lik
 Media Data Exchange
 -------------------
 
+A conceptual diagram of the  media data exchange platform is given in Figure 2. 
+
+.. image:: video_architecture.png
+    :width: 800px
+    :align: center
+    :height: 600px
+    :alt: alternate text
+
+Figure 2: Media Data Exchange platform: Services view
+
+Several registered, authenticated and authorized clients/applications should be able to publish and access live and archived media (video and/or audio) streams via standard media transport protocols and standard stream formats (e.g., RTMP, HLS etc. for live streams and MP4, AVI etc. for archived video). An emerging useful scenario is the ingestion of video streams and/or events associated with video data from the surveillance UAVs, where the data publishing is triggered by onboard analytics.
+
+The available streams should be discoverable via resource catalog which may contain other useful information about the data source (camera) itself. Similar to IoT data streams other services can also be provided through the data exchange stack: flexibility to applications to pick and choose the streams they want to subscribe to, flexibility to the media device owners to share only appropriate feeds with others, for metering of video data consumed by a given application etc. For example, the police department, that owns several surveillance cameras, may want to share only some of the media streams (security non-critical feeds) with other entities.
+
+At the core of the media exchange platform is the media streaming engine. The streaming engine ingests video streams from the installed cameras (and even mobile devices, e.g., drones, in future) and serves it to various applications. To cater to diverse set of clients, a streaming engine may provide transcoding and re-formatting capabilities.
+
+Note that the above figure is the conceptual view of media exchange platform. Today, most commercially available VMS platforms support device config/control services (via the well adopted ONVIF standard), storage/archiving and retrieval services. To some extent even  streaming services may be supported. Thus, in actual implementations, a scalable, open API based VMS platform may be easily adapted to offer the streaming and archiving services envisioned by the media exchange platform.
+
+
+Services offered by Media Exchange Platform
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The media data exchange platform facilitates easy exchange of media-data across various smart city entities. The main services offered by the media exchange platform are as follows:
+
+        - Distribution service: It provides
+                - Secure, authenticated, authorised and accountable (metered) access to the available media streams
+                - Framework and mechanisms for defining sharing policies to facilitate media sharing across various entities
+                - Framework for lifetime management of streaming sessions: For example, time based access, data limit based access etc.
+                - Framework for privacy preserving presentation of media streams
+        
+        - Dynamic Ingestion service: It provides
+                - Framework for creation and management of dynamic media channels by authorized entities
+                        - Setting up stream parameters (data rates, data limits etc.)
+                - Secure, authenticated and metered publishing of media streams over such channels
+        - Archiving service: It provides
+                - Authenticated recording and secure archiving of live media streams
+                        - Framework to support various recording policies
+                - Secure, authenticated search and on-demand retrieval and playback of archived media segments
+                - Sufficient storage and backups provisioning for storing archived media data
+        - Catalog service: It provides support for
+                - Search and discovery of available media streams
+                        - Meta-information corresponding to the associated media devices
+                - Search and discovery of media-iot streams corresponding to a given media stream
+        - Onboarding services: It provides
+                - Secure device onboarding and zero touch provisioning to configure security credentials, stream endpoints and parameters (data limits etc.)
+                - Secure onboarding and provisioning of meta-media stream sources
+
+
+The media exchange platform security and AAA (Authentication, Authorization and Access control) requirements, that are implicit in above but are important enough to be called out explicitly, are as follows:
+        - Provide support for data encryption for both inbound (ingestion) and outbound (distribution) media data stream
+        - Provide framework for authenticated access and access lifecycle management to avail services offered by the media exchange platform
+        - Provide framework for authenticated and authorized sharing of media data amongst various entities
+
+
+Further, some architectural requirements, which may guide specific implementations of the media exchange platforms and are desirable from the performance point of view in the context of smart city applications, are as follows:
+
+        - Scalability
+                - Flexibility to add more streaming engines
+                - Load balancers to offload access and publish client connections
+        - Support for variety of stream protocols and formats
+        - Support low-latency protocols for media streaming
+        - Support for transcoding, multiple bit rates and re-formatting
+
+
+Detailed APIs for each of the above services will be documented. In particular APIs for:
+
+        - Secure device onboarding and secure onboarding and provisioning of meta-media stream sources
+        - Accessing live Media streams and meta-media streams for authenticated and authorized consumers, with metering support
+        - Publishing live media streams and offline media content for authenticated and authorized content producers, with metering support
+        - Searching of media stream sources, and Meta-Media sources and streams
+        - Data sharing APIs: Request for following and grant of sharing live & archived media streams and meta-media streams with authentication & authorization support.
+        - Recording and archiving media streams. Accessing archived media streams and meta-media streams for authenticated and authorized consumers with metering support
+
+        
+In Figure 2 above, we have included a ‘Device configuration and management service’ which, although an integral part of video sub-system, is not strictly a part of the media data layer. It provides secure and authenticated access to configure and manage underlying media devices (e.g., cameras) and is, thus, aligned to the operational aspects which are going to be handled by the operational-telemetry component of the stack. Further, since various public/private entities may deploy their own devices, these entities may not want to share the configuration and management functions with other entities. Thus, currently, these functions have been excluded from the media data exchange platform.
 
