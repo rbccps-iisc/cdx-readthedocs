@@ -20,8 +20,8 @@
 # -- Project information -----------------------------------------------------
 
 project = u'CDX'
-copyright = u'2018, Poorna Chandra Tejasvi'
-author = u'Poorna Chandra Tejasvi'
+copyright = u'2018, RBCCPS, IISc'
+author = u'CDX Editor'
 
 # The short X.Y version
 version = u''
@@ -134,7 +134,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'CDX.tex', u'CDX Documentation',
-     u'Poorna Chandra Tejasvi', 'manual'),
+     u'CDX Editor', 'manual'),
 ]
 
 
