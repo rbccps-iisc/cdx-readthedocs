@@ -157,7 +157,20 @@
             
   <div class="section" id="cdx-subsystems">
 <h1>CDX Subsystems<a class="headerlink" href="#cdx-subsystems" title="Permalink to this headline">¶</a></h1>
-<p>This is the documentation for all the sub-systems of CDX.</p>
+<p>CDX consist of the following systems:</p>
+<ol class="arabic simple">
+<li><strong>Authenticator and API gateway</strong> : A system which is the entry point for users of the CDX. It authenticates users and if successful connects users to the appropriate microservice inside the CDX.</li>
+<li><strong>Data broker</strong> : The main system of CDX which allows users to publish and subscribe data in a secure fashion. This provides the interface to access live data being exchanged with the CDX.</li>
+<li><strong>Catalog</strong> : The service which provides the user with a list of devices/apps currently connected to the CDX. It also provides other meta-information such as the data format in which messages are subscribed/published by the device/app.</li>
+<li><strong>Database</strong> : The system which stores the historic data.</li>
+<li><strong>AAA server</strong> : The system which authenticates and authorizes users.</li>
+<li><strong>Video server</strong> : A system which acts as a broker for videos in a smart-city.</li>
+<li><strong>Identity manager</strong> : A system which is responsible for providing credentials and maintaining identity of CDX users.</li>
+<li><strong>Certificate authority</strong> : A system which provides certificates for CDX users.</li>
+<li><strong>Log server</strong> : A system which monitors logs from various system in the CDX. These logs are collected to detect or prevent any intrusions.</li>
+<li><strong>IDPS</strong> : The intrusion detection and prevention system, which analyzes the logs produced by the log server and takes appropriate actions to detect/prevent potential intrusions.</li>
+</ol>
+<p>More details about the sub-systems can be found in the following sections</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="catalog.html">Catalog</a><ul>
