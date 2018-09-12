@@ -50,6 +50,7 @@ Towards defining the structure of catalog items, we propose to organize the meta
                 - Configuration messages: Configuration parameters of the device, e.g., sampling rates, sleep times etc.
                 - Management messages: Messages related to Device management.
                 - JSON-RPC messages and responses.			
+
 Of course the above message types could be further extended in the future. 
 
 A key idea is to store  dynamic meta-information within a catalog entry as a JSON-schema itself. Thus, the metadata becomes an actionable specification that can be used to dynamically validate various messages  being sent from/to the device (see Figure 1).

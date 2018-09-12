@@ -25,11 +25,11 @@ Contents:
    :maxdepth: 2
 
    gettingStarted
-   cdxsubsystems
-   cdxusers
-   quickwalkthrough
+   guide 
    apis
    usage
+   cdxsubsystems
+   cdxusers
    license
    help
 
