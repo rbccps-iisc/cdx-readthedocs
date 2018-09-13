@@ -6,10 +6,16 @@ It is a comprehensive software solution stack comprising various microservices f
 between data producers and consumers.
 
 
-.. image:: puzzle_board.png
+.. image:: hourglass.png
     :width: 700px
     :align: center
-    :height: 250px
+    :height: 450px
+    :alt: alternate text
+
+.. image:: ms_arch.png
+    :width: 700px
+    :align: center
+    :height: 400px
     :alt: alternate text
 
 Features

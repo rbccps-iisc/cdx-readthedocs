@@ -4,9 +4,9 @@ Usage
 The following workflow will attempt to illustrate the typical usage of the smart city stack.
 
 .. image:: usage.png
-    :width: 600px
+    :width: 700px
     :align: center
-    :height: 600px
+    :height: 700px
     :alt: alternate text
 
 Figure 1 : Usage overview of CDX

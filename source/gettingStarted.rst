@@ -8,7 +8,7 @@ Prerequisites
 
 #. Install Docker ::
 
-    sudo apt-get install docker
+    sudo apt-get install docker.io
 
 #. Add permission to user ::
 

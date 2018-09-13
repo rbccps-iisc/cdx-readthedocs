@@ -1,5 +1,5 @@
-Unfollow API
-============
+Unfollow 
+========
 
 * **Summary**: The unfollow API is a complement of the ``unshare`` API for the requestor. If the requestor at any point feels that he/she no longer 
   needs the permissions granted by a device, they can call the ``unfollow`` API. This will delete entries from LDAP and unbind the queue if bound. 
