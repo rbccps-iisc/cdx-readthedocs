@@ -3,8 +3,8 @@ Guide
 
 This guide will help you understand the internals and operations of the CDX system.
 
-CDX CONFIGURAION 
-----------------
+CDX Configuration 
+-----------------
 
 Once we are done with setting up CDX, the configuration file ``ideam.conf`` will updated with the generated passwords for sub-systems ::
 
@@ -47,7 +47,7 @@ Once we are done with setting up CDX, the configuration file ``ideam.conf`` will
 CDX Subsystems
 --------------
 
-As explained before, CDX consists of multiple subsystems such as APIGateway, Data Broker, Media Broker, IoT Database, Authentication, Authorization and Accounting system etc. 
+As explained earlier, CDX consists of multiple subsystems such as APIGateway, Data Broker, Media Broker, IoT Database, Authentication, Authorization and Accounting system etc. 
 
 In this section, we will have detailed usage guide for every subsystem. Let us first understand if all the subsystems are live and operating in the respective ports as per the config file provided. This can be verified by using the docker command ::
 
@@ -104,4 +104,4 @@ AAA Server
 ^^^^^^^^^^
 
 Web Server
-^^^^^^^^^
+^^^^^^^^^^
